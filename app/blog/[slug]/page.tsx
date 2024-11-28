@@ -6,6 +6,8 @@ import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image';
 import { PortableText } from 'next-sanity';
 
+export const revalidate = 30;
+
 async function getData(slug: string) {
   const query = `
     *[_type == 'blog' && slug.current == '${slug}'] {
